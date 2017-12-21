@@ -9,21 +9,81 @@
 
     <title>Christmas 2017</title>
 
-    <!-- Bootstrap core CSS -->
-    <!-- link href="css/bootstrap.min.css" rel="stylesheet" -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
 
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-          <h1>Test from home</h1>
-          <hr/>
+          <h1>Christmas Puzzle 2017</h1><br />
+          <h2>Reindeer order</h2>
+          <hr />
       </div>
     </div>
 
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container">
+      <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+          Uh oh! The reindeer are messed up!
+          <ul>
+          <li>
+            Comet behind Rudolph, Prancer and Cupid.
+          </li>
+          <li>
+            Blitzen behind Cupid and in front of Donder, Vixen and Dancer.
+          </li>
+          <li>
+            Cupid in front of Comet, Blitzen and Vixen.
+          </li>
+          <li>
+            Donder behind Vixen, Dasher and Prancer.
+          </li>
+          <li>
+            Rudolph behind Prancer and in front of Donder, Dancer and Dasher.
+          </li>
+          <li>
+            Vixen in front of Dancer and Comet.
+          <li>
+            Dancer behind Donder, Rudolph and Blitzen.
+          </li>
+          <li>
+            Prancer in front of Cupid, Donder and Blitzen
+          </li>
+          <li>
+            Dasher behind Prancer and in front of Vixen, Dancer and Blitzen.
+          </li>
+          <li>
+            Donder behind Comet and Cupid.
+          </li>
+          <li>
+            Cupid in front of Rudolph and Dancer.
+          </li>
+          <li>
+            Vixen behind Rudolph, Prancer and Dasher.
+          </li>
+          </ul>
+Prancer
+ Cupid
+  Rudolph
+   Dasher
+    Blitzen
+     Vixen
+      Comet
+       Donder
+        Dancer
+        </div>
+        <div class="col-xs-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" id="canvasWidth">
+          <canvas id="puzzleCanvas"></canvas>
+        </div>
+      </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="reindeerPuzzle.js"></script>
   </body>
 </html>
