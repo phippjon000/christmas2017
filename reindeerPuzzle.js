@@ -1,10 +1,12 @@
 // Constants
 var CANVAS_HEIGHT = 400;
-var TIME_PER_FRAME = 100;
+var START_Y = 100;
 
 // Globals
 var canvas;
 var ctx;
+var canvasWidth;
+var mouseDown;
 
 $(document).ready(function() {
 	// Initialize canvas and context
@@ -14,17 +16,27 @@ $(document).ready(function() {
 	canvas.height = CANVAS_HEIGHT;
 
 	// Create event handlers
-	$(window).resize(setCanvasWidth);
+	$(window).resize(onResize);
+	$("#puzzleCanvas").mousedown(onMouseDown);
+	
+	// Draw screen
 	update();
 });
 
-function setCanvasWidth() {
-	var width = $("#canvasWidth").width();
-	canvas.width = width;
+function onResize() {
+	canvasWidth = $("#canvasWidth").width();
+	canvas.width = canvasWidth;
 	update();
 };
+
+function onMouseDown() {
+	mouseDown = true;
+}
 
 function update() {
 	ctx.font = "1.5em sans-serif";
 	ctx.fillText("Hello!", 10, 50);
+	if (mouseDown) {
+		ctx.strokeRect(10, 10, 100, 100);
+	}
 }
