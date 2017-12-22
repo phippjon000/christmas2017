@@ -23,10 +23,13 @@ $(document).ready(function() {
 	canvas[0].height = CANVAS_HEIGHT;
 
 	// Create event handlers
-	$(window).resize(setCanvasWidth);
-	canvas.mousedown(onMouseDown);
-	canvas.mouseup(onMouseUp);
-	canvas.mousemove(onMouseMove);
+	$(window).on("resize", setCanvasWidth);
+	canvas.on("mousedown", onDown);
+	canvas.on("mouseup", onUp);
+	canvas.on("mousemove", onMove);
+	canvas.on("touchstart", onDown);
+	canvas.on("touchend", onUp);
+	canvas.on("touchmove", onMove);
 	
 	// Start loop
 	loop = setInterval(update, TIME_PER_FRAME);
@@ -37,7 +40,7 @@ function setCanvasWidth() {
 	canvas[0].width = canvasWidth;
 };
 
-function onMouseDown(e) {
+function onDown(e) {
 	if (draggingReindeer == null) {
 		var x = getXClick(e);
 		var y = getYClick(e);
@@ -49,13 +52,13 @@ function onMouseDown(e) {
 	}
 }
 
-function onMouseUp(e) {
+function onUp(e) {
 	if (draggingReindeer != null) {
 		draggingReindeer = null;
 	}
 }
 
-function onMouseMove(e) {
+function onMove(e) {
 	if (draggingReindeer != null) {
 		setDraggingPosition(e);
 	}
